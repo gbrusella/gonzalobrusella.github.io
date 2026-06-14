@@ -1,0 +1,28 @@
+baseURL = "https://brusella.com.ar/"
+title = "Brusella"
+theme = "titan"
+locale = "en-us"
+
+[params]
+description = "Personal blog by Gonzalo Brusella"
+
+  [params.titan]
+  shape = "overlay"
+  motion = "sheet"
+  relax = 2
+  cell = 66
+  controls = true
+
+  [params.hero]
+  kicker = "Welcome"
+  title = "Brusella"
+  tagline = "Thoughts, projects, and ideas"
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 1
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2

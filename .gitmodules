@@ -1,0 +1,3 @@
+[submodule "themes/titan"]
+	path = themes/titan
+	url = https://github.com/gbrusella/hugo-theme-titan.git
