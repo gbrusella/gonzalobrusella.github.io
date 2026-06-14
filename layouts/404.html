@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="panel">
+  <h1>404 — Page not found</h1>
+  <blockquote>
+    <p>“You are no longuer on a <em>mustard</em> friendly environment.”</p>
+    <footer>— Gonzalo Brusella</footer>
+
+    <p>That page doesn’t exist, or it moved. Let’s get you back on the grid.</p>
+    <ul class="post-list">
+      <li><a href="{{ " /" | relURL }}">Home</a></li>
+      <li><a href="{{ " /posts/" | relURL }}">Posts</a></li>
+    </ul>
+</article>
+{{ end }}
