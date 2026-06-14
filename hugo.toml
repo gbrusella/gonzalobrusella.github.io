@@ -7,15 +7,15 @@ locale = "en-us"
 description = "Personal blog by Gonzalo Brusella"
 
   [params.titan]
-  shape = "overlay"
+  shape = "rhombille"
   motion = "sheet"
   relax = 2
   cell = 66
-  controls = true
+  controls = false
 
   [params.hero]
   kicker = "Welcome"
-  title = "Brusella"
+  title = "Gonzalo Brusella's Blog"
   tagline = "Thoughts, projects, and ideas"
 
 [[menu.main]]
