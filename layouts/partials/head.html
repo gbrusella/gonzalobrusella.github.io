@@ -3,7 +3,6 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
 {{ with .Description | default site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
-
 {{/* --- Link preview cards (Open Graph + Twitter) --- */}}
 {{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
 {{ $desc := .Description | default .Summary | default site.Params.description }}
@@ -28,3 +27,4 @@
 {{ with resources.Get "css/series.css" }}
 <link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
 {{ end }}
+
