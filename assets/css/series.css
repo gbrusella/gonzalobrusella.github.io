@@ -1,0 +1,39 @@
+.series-nav {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(127, 127, 127, .3);
+  border-radius: 10px;
+  font-size: .95rem;
+}
+
+.series-nav-head {
+  margin: 0 0 .75rem;
+  font-weight: 600;
+}
+
+.series-nav-list {
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+
+.series-nav-list li {
+  margin: .25rem 0;
+}
+
+.series-nav-list li.is-current {
+  font-weight: 700;
+}
+
+.series-nav-prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(127, 127, 127, .25);
+  padding-top: .85rem;
+}
+
+.series-nav-prevnext .series-next {
+  margin-left: auto;
+  text-align: right;
+}

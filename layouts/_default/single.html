@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="panel">
+  <h1>{{ .Title }}</h1>
+  <div class="post-meta">
+    {{ .Date.Format "Jan 2, 2006" }}{{ if .ReadingTime }} · {{ .ReadingTime }} min read{{ end }}
+  </div>
+  {{ .Content }}
+  {{ partial "series-nav.html" . }}
+</article>
+{{ end }}
