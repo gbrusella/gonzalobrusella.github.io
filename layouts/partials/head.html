@@ -5,3 +5,9 @@
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 {{ $css := resources.Get "css/titan.min.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ with resources.Get "css/syntax.css" }}
+<link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
+{{ end }}
+{{ with resources.Get "css/series.css" }}
+<link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
+{{ end }}

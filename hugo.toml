@@ -3,6 +3,18 @@ title = "Gonzalo Brusella"
 theme = "titan"
 locale = "en-us"
 
+[markup]
+  [markup.highlight]
+  noClasses = false
+  lineNos = false
+  tabWidth = 2
+  guessSyntax = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
 [params]
 description = "Personal blog by Gonzalo Brusella"
 
@@ -23,6 +35,22 @@ description = "Personal blog by Gonzalo Brusella"
   url = "/posts/"
   weight = 1
 [[menu.main]]
+  name = "TIL"
+  url = "/til/"
+  weight = 2
+[[menu.main]]
+  name = "Notes"
+  url = "/notes/"
+  weight = 3
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 4
+[[menu.main]]
+  name = "Gallery"
+  url = "/gallery/"
+  weight = 5
+[[menu.main]]
   name = "About"
   url = "/about/"
-  weight = 2
+  weight = 6

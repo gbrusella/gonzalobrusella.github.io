@@ -1,0 +1,28 @@
+{{- $cur := . -}}
+{{- with .Params.series -}}
+  {{- $name := . -}}
+  {{- if reflect.IsSlice . }}{{ $name = index . 0 }}{{ end -}}
+  {{- with site.GetPage (printf "/series/%s" ($name | urlize)) -}}
+    {{- $posts := .Pages.ByWeight -}}
+    {{- $total := len $posts -}}
+    {{- $idx := -1 -}}
+    {{- range $i, $p := $posts }}{{ if eq $p.RelPermalink $cur.RelPermalink }}{{ $idx = $i }}{{ end }}{{ end -}}
+    <nav class="series-nav" aria-label="Series navigation">
+      <p class="series-nav-head">
+        Part {{ add $idx 1 }} of {{ $total }} in the series
+        <a href="{{ .RelPermalink }}">{{ $name }}</a>
+      </p>
+      <ol class="series-nav-list">
+        {{- range $i, $p := $posts }}
+        <li{{ if eq $i $idx }} class="is-current" aria-current="true"{{ end }}>
+          {{- if eq $i $idx }}{{ $p.Title }}{{ else }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end -}}
+        </li>
+        {{- end }}
+      </ol>
+      <div class="series-nav-prevnext">
+        {{- if gt $idx 0 }}{{ $prev := index $posts (sub $idx 1) }}<a class="series-prev" href="{{ $prev.RelPermalink }}">← {{ $prev.Title }}</a>{{ end -}}
+        {{- if lt $idx (sub $total 1) }}{{ $next := index $posts (add $idx 1) }}<a class="series-next" href="{{ $next.RelPermalink }}">{{ $next.Title }} →</a>{{ end -}}
+      </div>
+    </nav>
+  {{- end -}}
+{{- end -}}
