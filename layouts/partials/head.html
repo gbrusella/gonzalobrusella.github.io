@@ -27,4 +27,7 @@
 {{ with resources.Get "css/series.css" }}
 <link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
 {{ end }}
+{{ with resources.Get "css/overrides.css" }}
+<link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
+{{ end }}
 
