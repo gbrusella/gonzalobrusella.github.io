@@ -3,6 +3,9 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Daily rebuild so future-dated posts go live on their publish date
+    - cron: "5 3 * * *"
   workflow_dispatch:
 
 permissions:
