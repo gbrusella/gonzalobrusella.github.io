@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="hero-kicker">{{ site.Params.hero.kicker | default "Augmentation Online" }}</p>
+  <h1 class="hero-title">{{ site.Params.hero.title | default site.Title }}</h1>
+  <p class="hero-tagline">{{ site.Params.hero.tagline | default site.Params.description }}</p>
+</section>
+
+{{ with .Content }}<div class="panel">{{ . }}</div>{{ end }}
+
+{{ $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+{{ with $posts }}
+<div class="panel" style="margin-top:2rem">
+  <h2>Latest</h2>
+  <ul class="post-list">
+    {{ range first 5 . }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <div class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</div>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+{{ end }}

@@ -1,0 +1,11 @@
+/* Fix: descenders (e.g. the "g" in "Blog") were clipped by the gradient text box */
+.hero-title {
+  line-height: 1.1;
+  padding-bottom: .15em;
+}
+
+/* Larger "Welcome" kicker above the hero title */
+.hero-kicker {
+  font-size: clamp(16px, 2.4vw, 24px);
+  margin-bottom: 2rem;
+}
